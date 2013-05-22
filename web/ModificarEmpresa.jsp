@@ -53,35 +53,35 @@
                     <table cellspacing="5" cellpadding="5">
                         <tr>
                             <td>NIT:</td>
-                            <td><input type="text" value="<%=NIT %>" name="NIT" placeholder="0123-010190-100-1" required pattern="\d{4}-\d{6}-\d{3}-\d{1}" readonly/></td>
+                            <td><input type="text" value="<%=NIT%>" name="NIT" placeholder="0123-010190-100-1" required pattern="\d{4}-\d{6}-\d{3}-\d{1}" readonly/></td>
                         </tr>
                         <tr>
                             <td>Nombre de la empresa:</td>
-                            <td><input type="text" value="<%=CompanyName %>" name="CompanyName" required length="25" size="25"/></td>
+                            <td><input type="text" value="<%=CompanyName%>" name="CompanyName" required length="25" size="25"/></td>
                         </tr>
                         <tr>
                             <td>Email de contacto:</td>
-                            <td><input type="email" value="<%=Email %>" name="Email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" placeholder="ejemplo@ejemplo.com" required length="30" size="30"/></td>
+                            <td><input type="email" value="<%=Email%>" name="Email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" placeholder="ejemplo@ejemplo.com" required length="30" size="30"/></td>
                         </tr>
                         <tr>
                             <td>Direccion:</td>
-                            <td><textarea name="Address" required length="50" value=""><%=Address %> </textarea>
+                            <td><textarea name="Address" required length="50" value=""><%=Address%> </textarea>
                                <!-- <input type="text" value="" name="Address" required lenght="50"/>                            <!-- <input type="text" value="" name="Address" required lenght="50"/></td> -->
                             </td>
                         </tr>
                         <tr>
                             <td>Telefono:</td>
-                            <td><input type="text" value="<%=Phone %>" name="Phone" pattern="\d{4}-\d{4}" placeholder="1234-5678" required/></td>
+                            <td><input type="text" value="<%=Phone%>" name="Phone" pattern="\d{4}-\d{4}" placeholder="1234-5678" required/></td>
                         </tr>
                         <tr>
                             <td>Ciudad:</td>
-                            <td><input type="text" value="<%=City %>" name="City" required/></td>
+                            <td><input type="text" value="<%=City%>" name="City" required/></td>
                         </tr>
                        
                         <tr>
                             <td>Departamento:</td>
                             <td>
-                                <Select name="Department" value="<%=Department %>">
+                                <Select name="Department" id="prueba">
                                     <option value="San Salvador">San Salvador</option>
                                     <option value="San Miguel">San Miguel</option>
                                     <option value="San Vicente">San Vicente</option>
@@ -97,6 +97,17 @@
                                     <option value="Chalatenango">Chalatenango</option>
                                     <option value="Cuscatlan">Cuscatlan</option>
                                 </Select>
+                                <script>
+                                    var val = "<%=Department%>", prueba = document.getElementById('prueba');
+                                    for(var i, j = 0; i = prueba.options[j]; j++) 
+                                    {
+                                        if(i.value == val) 
+                                        {
+                                            prueba.selectedIndex = j;
+                                            break;
+                                        }
+                                    }
+                                </script>
                             </td>
                         </tr>
                         <tr>

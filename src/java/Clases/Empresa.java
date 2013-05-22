@@ -67,6 +67,23 @@ public class Empresa extends Conexion{
      return rows; //Regresa el número de filas afectadas.
     }
     
+    public int borrarEmpresa(String NIT)
+    {
+        int rows = 0;
+            try
+            {
+                prestmt = conexion.prepareStatement("Delete from company where NIT = ?");
+                prestmt.setString(1, NIT);
+                
+                rows= prestmt.executeUpdate();
+            }
+            catch(Exception e)
+            {
+                
+            }
+        return rows; 
+    }
+    
     public int actualizarEmpresa(String CompanyName, String Email, String Address, String Phone, String City, String Department, String NIT)
     {
         int rows = 0;
